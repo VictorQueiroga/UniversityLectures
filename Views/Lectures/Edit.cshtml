@@ -1,0 +1,31 @@
+﻿@model UniversityLectures.Models.ViewModels.LectureFormViewModel
+@{
+    ViewData["Title"] = "Edit lecture status";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="lecture.Id" />
+            <input type="hidden" asp-for="lecture.Title" />
+            <input type="hidden" asp-for="lecture.Price" />
+            <input type="hidden" asp-for="lecture.Date" />
+            <input type="hidden" asp-for="lecture.Professor" />
+            <input type="hidden" asp-for="lecture.ProfessorId" />
+            <div class="form-group">
+                <label asp-for="lecture.Status" class="control-label"></label>
+                <select asp-for="lecture.Status">
+                    <option value="0">Waiting</option>
+                    <option value="1">Presented</option>
+                    <option value="2">Canceled</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
